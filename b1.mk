@@ -33,6 +33,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sap.conf:system/etc/sap.conf \
     $(LOCAL_PATH)/configs/sensor_def_common.conf:system/etc/sensor_def_common.conf
 
+# Prepatch to fix BT/WiFi bus lockups
+PRODUCT_COPY_FILES += \
+    device/lge/b1-common/bluetooth/bcm4335_prepatch.hcd:system/vendor/firmware/bcm4335_prepatch.hcd \
+    device/lge/b1-common/bluetooth/BCM4335C0_003.001.009.0055.0262.hcd:system/vendor/firmware/BCM4335C0_003.001.009.0055.0262.hcd \
+
 # Audio Configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
@@ -116,7 +121,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.sf.lcd_density=480 \
 	ro.opengles.version=196608 \
-	ro.loki_enabled=1
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
